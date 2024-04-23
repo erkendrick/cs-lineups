@@ -6,7 +6,7 @@ body, html {
 
 .carousel-container {
   overflow-y: auto;
-  max-height: 90vh; /* allows scrolling within this container */
+  max-height: 90vh; 
   margin-top: 10vh; 
   width: 100%;
   -ms-overflow-style: none; /* IE and Edge */
