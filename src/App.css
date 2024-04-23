@@ -7,7 +7,7 @@ body, html {
 .carousel-container {
   overflow-y: auto;
   max-height: 90vh; /* allows scrolling within this container */
-  margin-top: 10vh; /* offset by the height of the fixed header */
+  margin-top: 10vh; 
   width: 100%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -18,13 +18,20 @@ body, html {
 }
 
 .carousel-item {
-  margin-bottom: 20px;
+  height: 100vh; 
+  display: flex;
+  min-height: auto;
+  margin-bottom: 2vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
 .carousel-image {
-  max-height: 75vh; 
+  max-height: 80%; 
   width: auto; 
+  object-fit: contain; 
   max-width: 100%; 
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0.2);
@@ -43,12 +50,13 @@ body, html {
 
 .App-header {
   width: 100%;
-  height: 10vh; 
+  min-height: 10vh; 
+  padding: 1vh 0;
   background-color: #282c34; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -57,7 +65,8 @@ body, html {
 
 .search-container {
   width: 100%; 
-  padding: 2vh 0; 
+  padding: 1vh 0; 
+  box-sizing: border-box;
   text-align: center; 
 }
 
