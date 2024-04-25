@@ -1,66 +1,90 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+
+const isMobile = () => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
 
 const VerticalCarousel = ({ images }) => {
-  const [carouselItems, setCarouselItems] = useState(images.map(img => ({
-    ...img,
-    isVisible: false
-  })));
   const containerRef = useRef(null);
+  const itemRefs = useRef([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [lastDirection, setLastDirection] = useState(null);
 
   useEffect(() => {
-
-    setCarouselItems(images.map(img => ({
-      ...img,
-      isVisible: false  
-    })));
-  }, [images]);  
-
-  const handleScroll = useCallback(() => {
-    const container = containerRef.current;
-    if (!container || !container.firstChild) {
-      return; 
+    if (currentIndex >= images.length) {
+      setCurrentIndex(0); 
     }
-  
-    const { scrollTop, scrollHeight, clientHeight } = container;
-    const itemHeight = container.firstChild.clientHeight;
-  
-    if (scrollTop + clientHeight >= scrollHeight - itemHeight) {
-      const newItems = [...carouselItems.slice(1), carouselItems[0]];
-      setCarouselItems(newItems);
-      setTimeout(() => { container.scrollTop = scrollTop - itemHeight; }, 0);
-    } else if (scrollTop <= itemHeight) {
-      const newItems = [carouselItems[carouselItems.length - 1], ...carouselItems.slice(0, -1)];
-      setCarouselItems(newItems);
-      setTimeout(() => { container.scrollTop = scrollTop + itemHeight; }, 0);
-    }
-  }, [carouselItems]);
+    itemRefs.current = itemRefs.current.slice(0, images.length);
+  }, [images.length, currentIndex]);
 
   useEffect(() => {
-    if (images.length > 2) {
-      const container = containerRef.current;
-      container.addEventListener('scroll', handleScroll, { passive: true });
-      return () => {
-        container.removeEventListener('scroll', handleScroll);
-      };
+    if (images.length < 3 || isMobile()) {
+      return;
     }
-  }, [images.length, handleScroll]);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const index = itemRefs.current.findIndex(ref => ref === entry.target);
+        if (entry.isIntersecting && index !== -1) {
+          const direction = index === 2 ? 1 : index === 0 ? -1 : 0;
+          if (direction !== lastDirection) {
+            setCurrentIndex(prevIndex => (prevIndex + direction + images.length) % images.length);
+            setLastDirection(direction); 
+          }
+        }
+      });
+    }, {
+      root: containerRef.current,
+      threshold: 0.66,
+      rootMargin: "0px"
+    });
+
+    const children = containerRef.current ? containerRef.current.children : [];
+    itemRefs.current.forEach((ref, idx) => {
+      if (children[idx]) {
+        observer.observe(children[idx]);
+        itemRefs.current[idx] = children[idx];
+      }
+    });
+
+    return () => {
+      itemRefs.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+      observer.disconnect();
+    };
+  }, [images.length, currentIndex, lastDirection]);
+
+  if (images.length < 3 || isMobile()) {
+    return (
+      <div className="carousel-container">
+        {images.map((image) => (
+          <div key={image.src} className="carousel-item">
+            <img src={image.src} alt={image.label || 'Image'} className="carousel-image"/>
+            <figcaption>{image.caption}</figcaption>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  const getPrevIndex = () => (currentIndex - 1 + images.length) % images.length;
+  const getNextIndex = () => (currentIndex + 1) % images.length;
 
   return (
     <div className="carousel-container" ref={containerRef}>
-      {carouselItems.map((image, index) => (
-        <div key={index} className="carousel-item">
-          <img
-            src={image.src}
-            alt={image.label || 'Image'}
-            className="carousel-image"
-            data-id={image.id}
-          />
-          <figcaption>{image.caption}</figcaption>
-        </div>
+      {[getPrevIndex(), currentIndex, getNextIndex()].map((index, idx) => (
+        index < images.length ? ( 
+          <div key={images[index].src} className="carousel-item" ref={el => itemRefs.current[idx] = el}>
+            <img src={images[index].src} alt={images[index].label || 'Image'} className="carousel-image"/>
+            <figcaption>{images[index].caption}</figcaption>
+          </div>
+        ) : null
       ))}
     </div>
   );
 };
 
 export default VerticalCarousel;
+
 

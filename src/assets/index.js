@@ -6,8 +6,38 @@ import MirageCTSmokeSetup from './mirage_ctSmoke_setup.jpg';
 import MirageTicketBoothSmoke from './mirage_ticketbooth_smoke_lineup.jpg';
 import OverpassHeavenFromWaterSmoke from './overpass_heaven_smoke.gif';
 import InfernoBFromASmoke from './inferno_b_from_a_smoke.gif';
+import AncientMidSmokeSetup from './ancient_mid_smoke_setup.jpg';
+import AncientRedSmokeLineup from './ancient_red_smoke_lineup.jpg';
+import AncientCatSmokeLineup from './ancient_cat_smoke_lineup.jpg';
 
 const images = [
+    {
+        src: AncientRedSmokeLineup,
+        map: "Ancient",
+        location: "T Spawn",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Ancient Red Smoke Lineup",
+        caption: "Aim at the top left of the tree leaves from the T Spawn setup and jump throw. Lands at the top of mid stairs to red room."
+    },
+    {
+        src: AncientCatSmokeLineup,
+        map: "Ancient",
+        location: "T Spawn",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Ancient Cat Smoke Lineup",
+        caption: "Aim at this corner where the two walls meet while standing at the T Spawn setup. Jump throw to land a smoke on the catwalk above boxes in mid and before the entrance to cheetah"
+    },
+    {
+        src: AncientMidSmokeSetup,
+        map: "Ancient",
+        location: "T Spawn",
+        utility: "Smoke",
+        category: "Setup",
+        label: "Ancient Mid Smoke Setup",
+        caption: "Stand squarely on the right side of the pillar in T Spawn"
+    },
     {
         src: InfernoBFromASmoke,
         map: "Inferno",
