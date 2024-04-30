@@ -1,82 +1,8 @@
-body,
-html {
+body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-.carousel-container {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  max-height: 90vh;
-  margin-top: 10vh;
-  width: 100%;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  
-}
-
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-item {
-  height: 100%;
-  display: flex;
-  min-height: auto;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
-
-.carousel-image {
-  max-height: 80%;
-  width: auto;
-  object-fit: contain;
-  max-width: 100%;
-  border-radius: 10px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.App h1 {
-  font-size: calc(8px + 2vmin);
-  padding-top: 0.5vh;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: white;
-  text-align: center;
-}
-
-.App-header {
-  width: 100%;
-  min-height: 10vh;
-  padding: 1vh 0;
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.search-container {
-  width: 100%;
-  padding: 1vh 0;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.search-input {
-  padding: 5px;
-  width: 300px; 
+  overflow: hidden;
 }
 
 .App {
@@ -88,5 +14,72 @@ html {
   align-items: center;
 }
 
+.App-header {
+  width: 100%;
+  height: 10vh;  /* Fixed height */
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  width: 60%; 
+  max-width: 250px; 
+  padding: 2px 6px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 2px 0; 
+}
+
+.carousel-container {
+  overflow-y: scroll;
+  height: 90vh;
+  width: 100%;
+  margin-top: 10vh;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.carousel-image {
+  max-height: 60vh;
+  max-width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 0.8rem; 
+  }
+
+  .search-input {
+    width: 70%;
+    max-width: 180px; 
+    padding: 1px 4px;  
+  }
+}
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SearchBar({ images, onFilter }) {
+function SearchBar({ images, onFilter, defaultImages }) {
     const [input, setInput] = useState('');
 
     const handleChange = (event) => {
@@ -8,7 +8,7 @@ function SearchBar({ images, onFilter }) {
         setInput(value);
 
         if (!value.trim()) {
-            onFilter(images);
+            onFilter(defaultImages);
             return;
         }
 

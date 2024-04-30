@@ -10,7 +10,64 @@ import AncientMidSmokeSetup from './ancient_mid_smoke_setup.jpg';
 import AncientRedSmokeLineup from './ancient_red_smoke_lineup.jpg';
 import AncientCatSmokeLineup from './ancient_cat_smoke_lineup.jpg';
 
-const images = [
+export const defaultImages = [
+    {
+        src: AncientRedSmokeLineup,
+        map: "Ancient",
+        location: "T Spawn",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Ancient Red Smoke Lineup",
+        caption: "Aim at the top left of the tree leaves from the T Spawn setup and jump throw. Lands at the top of mid stairs to red room."
+    },
+    {
+        src: AncientCatSmokeLineup,
+        map: "Ancient",
+        location: "T Spawn",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Ancient Cat Smoke Lineup",
+        caption: "Aim at this corner where the two walls meet while standing at the T Spawn setup. Jump throw to land a smoke on the catwalk above boxes in mid and before the entrance to cheetah"
+    },
+    {
+        src: InfernoBFromASmoke,
+        map: "Inferno",
+        location: "B Site",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Inferno B Site Smoke",
+        caption: "Nestled between the boxes and barrels on A, aim at the angle created by the two roofs and jump throw, smoke lands at the last choke between banana and B"
+    },
+    {
+        src: MirageWindowSmoke,
+        map: "Mirage",
+        location: "Window",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Mirage Window Smoke",
+        caption: "From the trash can setup hold key D for a moment before jump throwing"
+    },
+    {
+        src: MirageConnectorSmoke,
+        map: "Mirage",
+        location: "Connector",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Mirage Connector Smoke",
+        caption: "Aim at the inside of the bottom right of the rug design. Poor lineup will produce an abusable connector smoke for CT side"
+    },
+    {
+        src: OverpassHeavenFromWaterSmoke,
+        map: "Overpass",
+        location: "Heaven",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Overpass Heaven Smoke",
+        caption: "Tuck into the corner, line up with the vertical pipe and aim at the dark line on the wood wall below, move forward and jump throw"
+    }
+];
+
+export const allImages = [
     {
         src: AncientRedSmokeLineup,
         map: "Ancient",
@@ -111,5 +168,3 @@ const images = [
         caption: "Tuck into the corner, line up with the vertical pipe and aim at the dark line on the wood wall below, move forward and jump throw"
     }
 ];
-
-export default images;

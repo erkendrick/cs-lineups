@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import SearchBar from './SearchBar';
 import VerticalCarousel from './VerticalCarousel';
-import images from './assets';
+import { defaultImages, allImages } from './assets';
 
 function App() {
-  const [filteredImages, setFilteredImages] = useState(images);
+  const [filteredImages, setFilteredImages] = useState(defaultImages);
 
   const handleFilter = (filtered) => {
     setFilteredImages(filtered);
@@ -14,8 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Counter-Strike Lineups</h1>
-        <SearchBar images={images} onFilter={handleFilter} />
+        <SearchBar images={allImages} defaultImages={defaultImages} onFilter={handleFilter} />
       </header>
       <VerticalCarousel images={filteredImages} />
     </div>
