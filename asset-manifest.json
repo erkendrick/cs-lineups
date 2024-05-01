@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/cs-lineups/static/css/main.8877fbbe.css",
-    "main.js": "/cs-lineups/static/js/main.0eeda02c.js",
+    "main.js": "/cs-lineups/static/js/main.95985449.js",
     "static/media/overpass_heaven_smoke.gif": "/cs-lineups/static/media/overpass_heaven_smoke.6c2c5df4b7b8445a276d.gif",
     "static/media/inferno_b_from_a_smoke.gif": "/cs-lineups/static/media/inferno_b_from_a_smoke.d88ec8a8f9f391a7cc40.gif",
+    "static/media/inferno_mid_from_b_smoke.gif": "/cs-lineups/static/media/inferno_mid_from_b_smoke.5b5dc18952d11d1fd8fc.gif",
     "static/media/mirage_window_smoke.gif": "/cs-lineups/static/media/mirage_window_smoke.39009be08501e6f3fe4b.gif",
     "static/media/ancient_mid_smoke_setup.jpg": "/cs-lineups/static/media/ancient_mid_smoke_setup.e8dbf1d69278152ffddc.jpg",
     "static/media/mirage_ticketbooth_smoke_lineup.jpg": "/cs-lineups/static/media/mirage_ticketbooth_smoke_lineup.1719c953c3b106ec5f24.jpg",
@@ -15,10 +16,10 @@
     "static/media/ancient_cat_smoke_lineup.jpg": "/cs-lineups/static/media/ancient_cat_smoke_lineup.cb34af0e432b8c7c4aeb.jpg",
     "index.html": "/cs-lineups/index.html",
     "main.8877fbbe.css.map": "/cs-lineups/static/css/main.8877fbbe.css.map",
-    "main.0eeda02c.js.map": "/cs-lineups/static/js/main.0eeda02c.js.map"
+    "main.95985449.js.map": "/cs-lineups/static/js/main.95985449.js.map"
   },
   "entrypoints": [
     "static/css/main.8877fbbe.css",
-    "static/js/main.0eeda02c.js"
+    "static/js/main.95985449.js"
   ]
 }
