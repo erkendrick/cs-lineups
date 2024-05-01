@@ -50,9 +50,6 @@ const VerticalCarousel = ({ images }) => {
 
 export default VerticalCarousel;
 
-
-
-
 // import React, { useRef, useState, useEffect, useCallback } from 'react';
 
 // const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -285,3 +282,4 @@ const isMobile = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 };
 */
+

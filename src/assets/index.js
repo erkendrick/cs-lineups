@@ -9,6 +9,9 @@ import InfernoBFromASmoke from './inferno_b_from_a_smoke.gif';
 import AncientMidSmokeSetup from './ancient_mid_smoke_setup.jpg';
 import AncientRedSmokeLineup from './ancient_red_smoke_lineup.jpg';
 import AncientCatSmokeLineup from './ancient_cat_smoke_lineup.jpg';
+import InfernoMidFromBSmoke from './inferno_mid_from_b_smoke.gif';
+
+
 
 export const defaultImages = [
     {
@@ -28,6 +31,15 @@ export const defaultImages = [
         category: "Lineup",
         label: "Ancient Cat Smoke Lineup",
         caption: "Aim at this corner where the two walls meet while standing at the T Spawn setup. Jump throw to land a smoke on the catwalk above boxes in mid and before the entrance to cheetah"
+    },
+    {
+        src: InfernoMidFromBSmoke,
+        map: "Inferno",
+        location: "Mid",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Inferno Mid From B Smoke",
+        caption: "Walk up to the fountain, aim at the scaffolding, jump throw. Lands nicely for mid CT hold or lurk to under window"
     },
     {
         src: InfernoBFromASmoke,
@@ -68,6 +80,15 @@ export const defaultImages = [
 ];
 
 export const allImages = [
+    {
+        src: InfernoMidFromBSmoke,
+        map: "Inferno",
+        location: "Mid",
+        utility: "Smoke",
+        category: "Lineup",
+        label: "Inferno Mid From B Smoke",
+        caption: "Walk up to the fountain, aim at the scaffolding, jump throw. Lands nicely for mid CT hold or lurk to under window"
+    },
     {
         src: AncientRedSmokeLineup,
         map: "Ancient",
