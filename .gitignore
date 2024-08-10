@@ -1,0 +1,16 @@
+# Node.js (Backend)
+/backend/node_modules
+/backend/npm-debug.log*
+/backend/.env
+
+# React (Frontend)
+/frontend/node_modules
+/frontend/build
+/frontend/.DS_Store
+/frontend/.env
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Misc
+.DS_Store

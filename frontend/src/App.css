@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #2F4F4F;
+  color: #D3D3D3;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #3A3A3A;
+  padding: 10px 20px; 
+  border-bottom: 2px solid #555555;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.header .map-selection {
+  margin-right: 40px; 
+}
+
+.header select {
+  background-color: #555555;
+  color: #D3D3D3;
+  border: 1px solid #777777;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header form {
+  margin: 0;
+  padding: 0;
+}
+
+.header .login-form {
+  display: flex;
+  align-items: center;
+}
+
+.header input[type="text"],
+.header input[type="password"] {
+  background-color: #555555;
+  color: #D3D3D3;
+  border: 1px solid #777777;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.header button {
+  background-color: #777777;
+  color: #D3D3D3;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Login Indicator Styles */
+.login-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: yellow;
+  margin-left: 20px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5); 
+  border: 1px solid black; 
+  transition: background-color 1s ease, box-shadow 1s ease;
+}
+
+.login-indicator.green {
+  background-color: green;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); 
+}
+
+.login-indicator.red {
+  background-color: red;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  height: calc(100vh - 120px); 
+  padding: 20px; 
+  background-color: #2F4F4F;
+  margin-top: 80px; 
+}
+
+.image-item {
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #555555;
+  padding-bottom: 20px;
+}
+
+.image-item img {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #555555;
+}
+
+.image-item p {
+  margin-top: 10px;
+  color: #B0C4DE;
+}
+
+.admin-dashboard {
+  margin-top: 80px; 
+  padding: 20px;
+  background-color: #3A3A3A;
+  border-radius: 10px;
+  width: 90%; 
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-dashboard p {
+  height: 30px; 
+  color: #FFD700; 
+  margin-bottom: 10px;
+}
+
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  max-height: 400px; 
+  overflow-y: auto;
+  display: block; 
+}
+
+.admin-dashboard th,
+.admin-dashboard td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #555555;
+}
+
+.admin-dashboard th {
+  background-color: #555555;
+  color: #D3D3D3;
+  position: sticky;
+  top: 0; 
+  z-index: 1; 
+}
+
+.admin-dashboard tr:hover {
+  background-color: #444444;
+}
+
+.admin-dashboard button {
+  background-color: #777777;
+  color: #D3D3D3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-dashboard form input[type="text"],
+.admin-dashboard form input[type="file"] {
+  background-color: #555555;
+  color: #D3D3D3;
+  border: 1px solid #777777;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.admin-dashboard form button {
+  margin-top: 10px;
+}
