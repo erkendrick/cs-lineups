@@ -68,6 +68,28 @@ body {
   cursor: pointer;
 }
 
+.header a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.header a:hover {
+  color: #d3d3d3;
+}
+
+.header .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header .links .separator {
+  margin: 0;
+}
+
 /* Login Indicator Styles */
 .login-indicator {
   width: 15px;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Login from './Login';  
+import Login from './Login';
 
 function Header({ maps, onMapChange, onLogin, onLogout, isAuthenticated, loginStatus }) {
   const [selectedMap, setSelectedMap] = useState('');
@@ -24,6 +24,12 @@ function Header({ maps, onMapChange, onLogin, onLogout, isAuthenticated, loginSt
             <div className={`login-indicator ${loginStatus}`}></div>
           </>
         )}
+      </div>
+
+      <div className="links">
+        <a href="https://erkendrick.me" target="_blank" rel="noopener noreferrer">erkendrick.me</a>
+        <span className="separator">|</span>
+        <a href="https://github.com/erkendrick/cs-lineups/blob/master/backend/server.js" target="_blank" rel="noopener noreferrer">lineups.erkendrick.me/api</a>
       </div>
 
       <div className="map-selection">
